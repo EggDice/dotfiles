@@ -99,9 +99,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Brickflow related
-if [ -f ~/.brickflow ]; then
-    . ~/.brickflow
-fi
+#if [ -f ~/.brickflow ]; then
+#    . ~/.brickflow
+#fi
 
 
 #for spectacular
