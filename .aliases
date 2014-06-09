@@ -1,0 +1,16 @@
+# Easier navigation: .., ..., ~ and -
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# be nice
+alias please=sudo
+alias hosts='sudo $EDITOR /etc/hosts'
+
+# Shortcuts
+alias g="git"
+alias v="vim"

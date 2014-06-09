@@ -1,5 +1,5 @@
 [alias]
-	ci = commit -am
+	ci = commit
 	p = push
 	co = checkout
 	br = branch
@@ -11,6 +11,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
+	editor = vim
 [color "branch"]
 	current = yellow reverse
 	local = yellow

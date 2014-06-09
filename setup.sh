@@ -1,8 +1,10 @@
+# packages
 sudo apt-get install aptitude
 sudo aptitude update
 sudo aptitude upgrade
-sudo aptitude install -y vim git tmux i3
-sudo aptitude install -y lightdm
+sudo aptitude install -y vim git tmux
+sudo aptitude install lightdm i3
+sudo aptitude install -y nodejs
 
 # Google Chrome
 wget -c wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
