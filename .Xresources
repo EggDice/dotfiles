@@ -44,7 +44,7 @@ URxvt.saveLines: 8192
 !! Scroll inside of subscreen, less etc.
 URxvt.secondaryWheel: true
 URxvt.cursorUnderline: false
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+URxvt*font:xft:DejaVu\ Sans\ Mono:pixelsize=12:antialias=true,xft:DejaVu\ Sans\ Mono\ for\ Powerline:bold:pixelsize=12:antialias=true, xft:Terminess Powerline:size=12
 URxvt.transparent: true
 URxvt.borderless: true
 URxvt.shading: 35
