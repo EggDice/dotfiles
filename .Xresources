@@ -56,7 +56,7 @@ URxvt.scrollBar: false
 !
 !! These characters are used as delimiters for double-click word selection 
 !! by default, but may be overriden
-URxvt.perl-ext-common:default,matcher,tabbed
+URxvt.perl-ext-common:default,matcher
 URxvt.urlLauncher: google-chrome 
 URxvt.underlineURLs: true
 URxvt.matcher.button: 1 
