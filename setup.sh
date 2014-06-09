@@ -19,9 +19,9 @@ sudo modprobe wl
 sudo usermod -G netdev -a egg
 
 # Desktop
-mkdir video
-mkdir pictures
-mkdir downloads 
-mkdir music
-mkdir projects
-mkdir brickflow
+mkdir -p ~/video
+mkdir -p ~/pictures
+mkdir -p ~/downloads 
+mkdir -p ~/music
+mkdir -p ~/projects
+mkdir -p ~/brickflow
