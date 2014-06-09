@@ -4,6 +4,7 @@ sudo aptitude update
 sudo aptitude upgrade
 sudo aptitude install -y vim git tmux
 sudo aptitude install lightdm i3
+sudo aptitude install -y ttf-mscorefonts-installer rxvt-unicode-256color
 sudo aptitude install -y nodejs
 
 # Google Chrome

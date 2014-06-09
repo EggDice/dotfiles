@@ -1,0 +1,105 @@
+! ~/.Xresources
+!
+! This is a comment
+!
+! And this is how options may be set
+!	<WM_CLASS>.<optionname>: <value>
+!		Usually urxvt have ‘urxvt’ and ‘URxvt’ as its WM classes.
+!thicknesl: 10
+!	 	WM_CLASS in the example above may be:
+!		- ‘rxvt’, then same options derived from rxvt will work for urxvt;
+!		- ‘URxvt’, these options will not work for rxvt.
+!	<optionname>: <value> 
+!		WM_CLASS will be assumed to terminal.
+!	[WM_CLASS]*<optionname>: <value>
+!		Options that have WM_CLASS matching the first WM_CLASS of the window
+!		(which may be set with -name option for urxvt) will take priority.
+!		If no WM_CLASS specfied, then option will match against any WM_CLASS,
+!       i.e. any window.
+! See output of xprop for window class information.
+
+
+!--- Xft settings
+!
+Xft.antialias: 1
+Xft.dpi: 92
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+
+!--- Terminal settings
+!
+!termName rxvt-unicode
+!modifier: alt, meta, hyper, super, mod1, mod2, mod3, mod4, mod5;
+URxvt.scrollTtyOutput: false
+URxvt.scrollTtyKeypress: true
+URxvt.scrollWithBuffer: true
+URxvt.loginShell: false
+URxvt.saveLines: 8192
+!
+!-- Look and feel
+!
+!! Scroll inside of subscreen, less etc.
+URxvt.secondaryWheel: true
+URxvt.cursorUnderline: false
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+URxvt.transparent: true
+URxvt.borderless: true
+URxvt.shading: 35
+URxvt.urgentOnBell: true
+!! scrollbar related stuff ↓
+URxvt.scrollBar: false
+!
+!-- Perl stuff: URL matching etc.
+!
+!! These characters are used as delimiters for double-click word selection 
+!! by default, but may be overriden
+URxvt.perl-ext-common:default,matcher,tabbed
+URxvt.urlLauncher: google-chrome 
+URxvt.underlineURLs: true
+URxvt.matcher.button: 1 
+!selection.pattern-0: ( at .*? line \\d+)
+!selection.pattern-1: ^(/[^:]+):\
+!selection-autotransform.0: s/^([^:[:space:]]+):(\\d+):?$/:e \\Q$1\\E\\x0d:$2\\x0d/
+!selection-autotransform.1: s/^ at (.*?) line (\\d+)$/:e \\Q$1\\E\\x0d:$2\\x0d/
+!
+!-- Colors
+!
+!!		black
+URxvt.color0:	#000000
+URxvt.color8:	#555753
+!!		red
+URxvt.color1:	#CC0000
+URxvt.color9:	#EF2929
+!!		green
+URxvt.color2:	#4E9A06
+URxvt.color10:	#8AE234
+!!		yellow
+URxvt.color3:	#C4A000
+URxvt.color11:	#FCE94F
+!!		blue
+URxvt.color4:	#3465A4
+URxvt.color12:	#729FCF
+!!		magenta
+URxvt.color5:	#75507B
+URxvt.color13:	#AD7FA8
+!!		cyan
+URxvt.color6:	#06989A
+URxvt.color14:	#34E2E2
+!!		white
+URxvt.color7:	#D3D7CF
+URxvt.color15:	#EEEEEC
+!!
+URxvt.foreground: #AAAAAA
+URxvt.background: #000000
+URxvt.colorBD: #ffffff
+URxvt.underlineColor: #75507B
+!cursorColor:#e0e080
+!!		scrollbar color
+!scrollColor #010203
+!!		the color of zone scrollbar get through
+!throughColor: #8080f0
+!highlightColor: #f0f0f0
+!highlightTextColor: #000000
