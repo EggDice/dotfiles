@@ -11,6 +11,8 @@ sudo aptitude install -y acpitool
 sudo aptitude install -y docker.io
 sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
+sudo aptitude install mongodb
+sudo aptitude install default-jre default-jdk
 
 sudo aptitude install python
 sudo aptitude install python-pip
@@ -54,3 +56,10 @@ xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
 # vim
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl 'www.vim.org/scripts/download_script.php?src_id=21650' > ~/.vim/autoload/pathogen.vim
+pushd ~/.vim/bundle/
+git clone https://github.com/scrooloose/syntastic.git
+popd
+sudo chown -R $USER /usr/local
+npm install -g jshint
+npm install -g grunt-cli
+gem install tmuxinator

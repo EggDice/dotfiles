@@ -117,6 +117,15 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+
+# class                  border  backgr. text    indicator
+client.focused            #ad7fa8 #75507b #ffffff #ad7fa8
+client.focused_inactive   #555753 #3c3c3c #ffffff #ad7fa8
+client.unfocused          #555753 #3c3c3c #888888 #ad7fa8
+client.urgent             #ad7fa8 #ad7fa8 #ffffff #ff0000
+new_window 1pixel
+new_float 1pixel
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -143,8 +152,51 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        # status_command i3status
+        status_command node ~/projects/node-i3-bar/index.js
+	colors {
+		background #000000
+        	statusline #bbbbbb
+		focused_workspace 		 #C4A000 #000000 #C4A000
+		active_workspace		 #C4A000 #000000 #C4A000
+		inactive_workspace		 #000000 #000000 #AAAAAA
+		urgent_workspace		 #000000 #CC0000 #000000
+    }
 }
+
+for_window [class="(?i)google-chrome"] border none
+for_window [class="(?i)chromium"] border none
+for_window [class="(?i)urxvt"] border none
+
+exec nm-applet
+
+bindsym $mod+X move workspace to output right
+bindsym $mod+Z move workspace to output left
+
+
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+#workspace 1 "Web"
+#workspace 2 "Tmux"
+#workspace 3 "Shell"
+#workspace 4 "Vier"
+#workspace 5 "Fünf"
+#workspace 6 "Sechs"
+#workspace 7 "Sieben"
+#workspace 8 "Shell"
+#workspace 9 "Message"
+#workspace 10 "Message"
+
+
+
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/google-chrome' 
+exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/mux brickflow'
+exec --no-startup-id i3-msg 'workspace 3; exec /usr/bin/urxvt'
+exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/urxvt -name irssi -e /usr/bin/irssi'

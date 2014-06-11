@@ -13,6 +13,12 @@ colorscheme neon
 
 set nu
 set ruler
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+highlight ColorColumn ctermbg=7
 
 set hidden
 set nobackup
@@ -66,6 +72,10 @@ set wildignore+=node_modules
 
 " Disable Syntastic for HTML
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+let g:syntastic_check_on_open = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_warning_symbol = '⚠'
+map <C-F12> <ESC>:SyntaticCheck<CR>
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
