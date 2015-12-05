@@ -45,7 +45,10 @@ URxvt.saveLines: 8192
 URxvt.secondaryWheel: true
 URxvt.cursorUnderline: false
 URxvt*font:xft:DejaVu\ Sans\ Mono:pixelsize=10:antialias=true,xft:DejaVu\ Sans\ Mono\ for\ Powerline:bold:pixelsize=10:antialias=true, xft:Terminess Powerline:size=10
-URxvt.transparent: true
+xterm*faceName: xft:DejaVu\ Sans\ Mono:size=10:antialias=false
+xterm*font: *-fixed-*-*-*-18-*
+!URxvt.transparent: true
+URxvt.transparent: false
 URxvt.borderless: true
 URxvt.shading: 35
 URxvt.urgentOnBell: true
@@ -68,26 +71,26 @@ URxvt.matcher.button: 1
 !-- Colors
 !
 !!		black
-URxvt.color0:	#000000
+URxvt.color0:	#030303
 URxvt.color8:	#555753
 !!		red
-URxvt.color1:	#CC0000
-URxvt.color9:	#EF2929
+URxvt.color1:	#e40281
+URxvt.color9:	#f02148
 !!		green
-URxvt.color2:	#4E9A06
-URxvt.color10:	#8AE234
+URxvt.color2:	#83f209
+URxvt.color10:	#4c8251
 !!		yellow
-URxvt.color3:	#C4A000
-URxvt.color11:	#FCE94F
+URxvt.color3:	#e9ee02
+URxvt.color11:	#db8b22
 !!		blue
-URxvt.color4:	#3465A4
-URxvt.color12:	#729FCF
+URxvt.color4:	#4f1fdc
+URxvt.color12:	#04eef2
 !!		magenta
-URxvt.color5:	#75507B
-URxvt.color13:	#AD7FA8
+URxvt.color5:	#a802dd
+URxvt.color13:	#810322
 !!		cyan
-URxvt.color6:	#06989A
-URxvt.color14:	#34E2E2
+URxvt.color6:	#15a448
+URxvt.coloir14:	#34E2E2
 !!		white
 URxvt.color7:	#D3D7CF
 URxvt.color15:	#EEEEEC

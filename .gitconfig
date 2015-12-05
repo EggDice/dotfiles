@@ -6,8 +6,11 @@
 	st = status
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  szalljbeakocsiba = push
+  getinthecar = push
+  rabasz = rebase
 [color]
-	ui = always
+	ui = auto
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
@@ -30,14 +33,21 @@
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
+	pushInsteadOf = "https://github.com/"
 [url "git://github.com/"]
 	insteadOf = "github:"
 [url "git@gist.github.com:"]
 	insteadOf = "gst:"
 	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
+	pushInsteadOf = "https://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 [help]
 	autocorrect = 1
+[user]
+	name = Tamas Kokeny
+	email = tamas.kokeny.87@gmail.com
+[credential]
+	helper = cache
+#[url "https://"]
+#	insteadOf = git://

@@ -9,8 +9,9 @@ filetype plugin indent on
 
 syntax enable
 set background=dark
-colorscheme neon
+colorscheme delek
 
+set mouse=a
 set nu
 set ruler
 if exists('+colorcolumn')
@@ -19,6 +20,8 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 highlight ColorColumn ctermbg=7
+
+let g:ctrlp_custom_ignore = 'dist\|bower_components\|node_modules\|DS_Store\|git\|cache\|plugins'
 
 set hidden
 set nobackup
@@ -92,3 +95,6 @@ if ! has('gui_running')
 endif
 " map key for vimux command
 map <Leader>vp :VimuxPromptCommand<CR>
+
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==

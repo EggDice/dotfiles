@@ -3,9 +3,10 @@ sudo apt-get install aptitude
 sudo aptitude update
 sudo aptitude upgrade
 sudo aptitude install -y vim-nox git tmux curl
+sudo aptitude install -y mercurial
 sudo aptitude install lightdm i3
 sudo aptitude install -y ttf-mscorefonts-installer rxvt-unicode-256color unzip
-sudo aptitude install -y nodejs npm
+sudo aptitude install -y nodejs npm ssh
 sudo ln -sf /usr/bin/nodejs /usr/local/bin/node
 sudo aptitude install -y acpitool
 sudo aptitude install -y docker.io
@@ -13,7 +14,9 @@ sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 sudo sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
 sudo aptitude install mongodb
 sudo aptitude install default-jre default-jdk
+sudo aptitude install transmission vlc mplayer moc
 
+sudo aptitude install ruby-dev
 sudo aptitude install python
 sudo aptitude install python-pip
 pip install --user git+git://github.com/Lokaltog/powerline
@@ -63,3 +66,4 @@ sudo chown -R $USER /usr/local
 npm install -g jshint
 npm install -g grunt-cli
 gem install tmuxinator
+gem install lolcommits
