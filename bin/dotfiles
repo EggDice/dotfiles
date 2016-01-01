@@ -1,4 +1,5 @@
 #!/bin/bash
 
 source ./helpers.sh
+source ./init/10-sudo.sh
 source ./init/20-apt.sh

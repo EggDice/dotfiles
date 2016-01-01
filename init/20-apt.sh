@@ -8,7 +8,6 @@ packages=(
   build-essential
   cowsay
   curl
-  d
   git
   git-core
   htop
@@ -19,9 +18,11 @@ packages=(
   sl
   telnet
   tmux
+  transmission
   tree
   ttf-mscorefonts-installer
   vim-nox
+  wine
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
@@ -30,5 +31,6 @@ if (( ${#packages[@]} > 0 )); then
   e_header "Installing APT packages: ${packages[*]}"
   for package in "${packages[@]}"; do
     sudo apt-get -qq install "$package"
+    e_success "$package"
   done
 fi
