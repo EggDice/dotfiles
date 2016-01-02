@@ -23,6 +23,7 @@ packages=(
   ttf-mscorefonts-installer
   vim-nox
   wine
+  wine32
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
