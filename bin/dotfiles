@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DIR="$(dirname "$(readlink -f "$0")")"
-source $DIR/../helpers.sh
-source $DIR/../init/10-sudo.sh
-source $DIR/../init/20-apt.sh
+DOTFILES=DIR/..
+source $DOTFILES/helpers.sh
+source $DOTFILES/init/10-sudo.sh
+source $DOTFILES/init/20-apt.sh
