@@ -3,7 +3,7 @@ apt-get -qq install sudo
 
 # configure
 sudoers_file="sudoers-dotfiles"
-sudoers_src=$DOTFILES/conf/ubuntu/$sudoers_file
+sudoers_src=$DOTFILES/conf/$sudoers_file
 sudoers_dest="/etc/sudoers.d/$sudoers_file"
 if [[ ! -e "$sudoers_dest" || "$sudoers_dest" -ot "$sudoers_src" ]]; then
   cat <<EOF
