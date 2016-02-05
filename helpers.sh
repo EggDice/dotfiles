@@ -1,4 +1,3 @@
-export DOTFILES=~/.dotfiles
 export prompt_delay=5
 
 function e_header()   { echo -e "\n\033[1m$@\033[0m"; }
