@@ -1,5 +1,6 @@
 #!/bin/bash
 
-source ../helpers.sh
-source ../init/10-sudo.sh
-source ../init/20-apt.sh
+DIR="$(dirname "$(readlink -f "$0")")"
+source $DIR/../helpers.sh
+source $DIR/../init/10-sudo.sh
+source $DIR/../init/20-apt.sh

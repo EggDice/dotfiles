@@ -1,3 +1,4 @@
+dpkg --add-architecture i386
 e_header 'Update apt'
 sudo apt-get -qq update
 sudo apt-get -qq dist-upgrade
