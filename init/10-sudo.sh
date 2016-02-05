@@ -27,3 +27,4 @@ EOF
   fi
 fi
 
+sudo usermod -aG sudo eggdice
