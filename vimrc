@@ -1,4 +1,9 @@
 set nocompatible
+au BufNewFile,BufRead *.{js,mjs,jsm,es,es6},Jakefile setf javascript
+
+" remove white-space on edit
+autocmd BufWritePre * %s/\s\+$//e
+
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -59,7 +64,9 @@ map <Tab> i<Tab><Esc>^
 set backspace=start,eol,indent
 
 " powerline status always visible
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2
+set t_Co=256
 
 " disable cursor keys in navigation
 map <Left> <Nop>
@@ -80,9 +87,9 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_warning_symbol = '⚠'
 map <C-F12> <ESC>:SyntaticCheck<CR>
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 " powerline slow escape fix
 if ! has('gui_running')
@@ -98,3 +105,9 @@ map <Leader>vp :VimuxPromptCommand<CR>
 
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
+let g:vim_markdown_folding_disabled = 1
+set t_Co=256
+let g:molokai_original = 1
+colorscheme darkest-space
+set spell
+set spellfile=~/.vim/spell/en.utf-8.add

@@ -5,26 +5,24 @@ sudo apt-get -qq dist-upgrade
 
 # Install APT packages.
 packages=(
-  ansible
-  build-essential
   cowsay
   curl
-  git
-  git-core
+  default-jre
+  default-jdk
+  docker.io
+  ffmpeg
   htop
-  libssl-dev
-  python
+  mplayer
+  python-pip
   rxvt-unicode-256color
   silversearcher-ag
   sl
-  telnet
   tmux
-  transmission
-  tree
   ttf-mscorefonts-installer
   vim-nox
   wine
   wine32
+  xmonad
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))

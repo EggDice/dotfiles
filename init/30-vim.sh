@@ -10,15 +10,17 @@ wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols
 cp 10-powerline-symbols.conf  ~/.config/fontconfig/conf.d/
 rm 10-powerline-symbols.conf
 
-# Google Chrome
-wget -c wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-*.deb
-sudo apt-get -y install -f
-rm google-chrome-*.deb
-
 # vim
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl 'www.vim.org/scripts/download_script.php?src_id=21650' > ~/.vim/autoload/pathogen.vim
 pushd ~/.vim/bundle/
 git clone https://github.com/scrooloose/syntastic.git
+git clone https://github.com/szorfein/darkest-space
 popd
+
+# .vimrc
+ln -s ../vimrc ~/.vimrc
+
+# spell
+mkdir -p ~/.vim/spell
+ln -s ../spell ~/.vim/spell/en.utf-8.add
