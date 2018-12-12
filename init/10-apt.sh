@@ -14,6 +14,7 @@ packages=(
   htop
   mplayer
   python-pip
+  python3-pip
   rxvt-unicode-256color
   silversearcher-ag
   sl
