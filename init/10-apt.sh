@@ -17,6 +17,7 @@ packages=(
   rxvt-unicode-256color
   silversearcher-ag
   sl
+  stalonetray
   tmux
   ttf-mscorefonts-installer
   vim-nox
