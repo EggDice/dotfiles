@@ -1,3 +1,5 @@
+parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+
 # powerline
 pip install --user git+git://github.com/Lokaltog/powerline
 
@@ -19,8 +21,8 @@ git clone https://github.com/szorfein/darkest-space
 popd
 
 # .vimrc
-ln -s ../vimrc ~/.vimrc
+ln -s $parent_path/../vimrc ~/.vimrc
 
 # spell
 mkdir -p ~/.vim/spell
-ln -s ../spell ~/.vim/spell/en.utf-8.add
+ln -s $parent_path/../spell ~/.vim/spell/en.utf-8.add
