@@ -1,7 +1,7 @@
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 # powerline
-pip install --user git+git://github.com/Lokaltog/powerline
+pip3 install powerline-status
 
 mkdir -p ~/.fonts
 curl 'www.vim.org/scripts/download_script.php?src_id=21650' > ~/.fonts/PowerlineSymbols.otf
@@ -14,7 +14,7 @@ rm 10-powerline-symbols.conf
 
 # vim
 mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl 'www.vim.org/scripts/download_script.php?src_id=21650' > ~/.vim/autoload/pathogen.vim
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 pushd ~/.vim/bundle/
 git clone https://github.com/scrooloose/syntastic.git
 git clone https://github.com/szorfein/darkest-space
