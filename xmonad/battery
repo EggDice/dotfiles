@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+  then
+    /usr/bin/upower -i $(/usr/bin/upower -e | grep BAT) | grep -E "state|to\ full|percentage|time to empty"
+  else
+    if [ "$1" = "-t" ];
+      then
+        STATE=`/usr/bin/upower -i $(/usr/bin/upower -e | grep BAT) | grep -E "state" | awk '{print $2}'`
+        if [ "$STATE" = "charging" ]
+          then
+            exit 0
+          else
+            /usr/bin/upower -i $(/usr/bin/upower -e | grep BAT) | grep -E "percentage" | awk '{print $2}'
+            exit 1
+        fi
+    fi
+fi

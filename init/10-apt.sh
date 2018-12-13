@@ -38,3 +38,5 @@ if (( ${#packages[@]} > 0 )); then
     e_success "$package"
   done
 fi
+
+sudo chown -R egg /usr/local/

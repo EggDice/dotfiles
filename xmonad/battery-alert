@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source /home/eggdice/.bashrc
+export HOME=/home/eggdice
+DISPLAY=:0.0
+XAUTHORITY=/home/matrix/.Xauthority
+PERCENT=`/usr/local/bin/battery -t`
+if [ $? -eq 0 ]
+  then
+    echo "ok"
+  else
+    NUMBER=`echo $PERCENT | grep -o '[0-9]*'`
+    if [ $NUMBER -le 20 ]
+      then
+        BATTERY=`/usr/local/bin/battery`
+        /usr/bin/notify-send "Battery is LOW" $PERCENT
+      else
+        echo "ok"
+    fi
+fi

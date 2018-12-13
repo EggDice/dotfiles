@@ -4,4 +4,5 @@ source ./init/20-google-chrome.sh
 source ./init/30-vim.sh
 source ./init/40-git.sh
 source ./init/50-xmonad.sh
+source ./init/60-urxvt.sh
 
