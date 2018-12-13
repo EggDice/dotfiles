@@ -5,6 +5,7 @@ sudo apt-get -qq dist-upgrade
 
 # Install APT packages.
 packages=(
+  acpi
   arandr
   cowsay
   curl
@@ -30,6 +31,8 @@ packages=(
   vim-nox
   wine
   wine32
+  xcompmgr
+  xdotool
   xmonad
 )
 
