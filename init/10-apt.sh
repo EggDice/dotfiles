@@ -43,4 +43,4 @@ if (( ${#packages[@]} > 0 )); then
   done
 fi
 
-sudo chown -R egg /usr/local/
+sudo chown -R eggdice /usr/local/
