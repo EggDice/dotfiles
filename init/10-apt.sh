@@ -14,6 +14,7 @@ packages=(
   ffmpeg
   htop
   mplayer
+  network-manager-gnome
   python-pip
   python3-pip
   rxvt-unicode-256color

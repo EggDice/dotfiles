@@ -28,4 +28,6 @@ myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 myStartupHook = setWMName "LG3D"
                 >> spawnHere "nm-applet"
                 >> spawnHere "feh --bg-scale $HOME/.xmonad/background.png"
+                >> spawnOn "1" "google-chrome"
+                >> spawnOn "8" "stalonetray"
 
