@@ -10,6 +10,7 @@ packages=(
   default-jre
   default-jdk
   docker.io
+  feh
   ffmpeg
   htop
   mplayer
@@ -18,6 +19,7 @@ packages=(
   rxvt-unicode-256color
   silversearcher-ag
   sl
+  suckless-tools
   stalonetray
   tmux
   ttf-mscorefonts-installer
