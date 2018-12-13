@@ -9,7 +9,7 @@
 !	 	WM_CLASS in the example above may be:
 !		- ‘rxvt’, then same options derived from rxvt will work for urxvt;
 !		- ‘URxvt’, these options will not work for rxvt.
-!	<optionname>: <value> 
+!	<optionname>: <value>
 !		WM_CLASS will be assumed to terminal.
 !	[WM_CLASS]*<optionname>: <value>
 !		Options that have WM_CLASS matching the first WM_CLASS of the window
@@ -44,10 +44,7 @@ URxvt.saveLines: 8192
 !! Scroll inside of subscreen, less etc.
 URxvt.secondaryWheel: true
 URxvt.cursorUnderline: false
-URxvt*font:xft:DejaVu\ Sans\ Mono:pixelsize=10:antialias=true,xft:DejaVu\ Sans\ Mono\ for\ Powerline:bold:pixelsize=10:antialias=true, xft:Terminess Powerline:size=10
-xterm*faceName: xft:DejaVu\ Sans\ Mono:size=10:antialias=false
-xterm*font: *-fixed-*-*-*-18-*
-!URxvt.transparent: true
+URxvt*font: xft:DejaVu\ Sans\ Mono:pixelsize=10:antialias=true,xft:DejaVu\ Sans\ Mono\ for\ Powerline:bold:pixelsize=10:antialias=true, xft:Terminess Powerline:size=10
 URxvt.transparent: false
 URxvt.borderless: true
 URxvt.shading: 35
@@ -57,52 +54,42 @@ URxvt.scrollBar: false
 !
 !-- Perl stuff: URL matching etc.
 !
-!! These characters are used as delimiters for double-click word selection 
+!! These characters are used as delimiters for double-click word selection
 !! by default, but may be overriden
-URxvt.perl-ext-common:default,matcher
-URxvt.urlLauncher: google-chrome 
+URxvt.perl-ext-common:default,matcher,font-size
+URxvt.urlLauncher: google-chrome
 URxvt.underlineURLs: true
-URxvt.matcher.button: 1 
-!selection.pattern-0: ( at .*? line \\d+)
-!selection.pattern-1: ^(/[^:]+):\
-!selection-autotransform.0: s/^([^:[:space:]]+):(\\d+):?$/:e \\Q$1\\E\\x0d:$2\\x0d/
-!selection-autotransform.1: s/^ at (.*?) line (\\d+)$/:e \\Q$1\\E\\x0d:$2\\x0d/
+URxvt.matcher.button: 1
 !
 !-- Colors
 !
-!!		black
-URxvt.color0:	#030303
-URxvt.color8:	#555753
-!!		red
-URxvt.color1:	#e40281
-URxvt.color9:	#f02148
-!!		green
-URxvt.color2:	#83f209
-URxvt.color10:	#4c8251
-!!		yellow
-URxvt.color3:	#e9ee02
-URxvt.color11:	#db8b22
-!!		blue
-URxvt.color4:	#4f1fdc
-URxvt.color12:	#04eef2
-!!		magenta
-URxvt.color5:	#a802dd
-URxvt.color13:	#810322
-!!		cyan
-URxvt.color6:	#15a448
-URxvt.coloir14:	#34E2E2
-!!		white
-URxvt.color7:	#D3D7CF
-URxvt.color15:	#EEEEEC
-!!
-URxvt.foreground: #AAAAAA
+! Molokai theme
+! See: https://gist.github.com/vreon/845878
 URxvt.background: #000000
-URxvt.colorBD: #ffffff
-URxvt.underlineColor: #75507B
-!cursorColor:#e0e080
-!!		scrollbar color
-!scrollColor #010203
-!!		the color of zone scrollbar get through
-!throughColor: #8080f0
-!highlightColor: #f0f0f0
-!highlightTextColor: #000000
+URxvt.foreground: #d0d0d0
+URxvt.cursorColor: #d0d0d0
+URxvt.color0: #101010
+URxvt.color1: #960050
+URxvt.color2: #66aa11
+URxvt.color3: #c47f2c
+URxvt.color4: #30309b
+URxvt.color5: #7e40a5
+URxvt.color6: #3579a8
+URxvt.color7: #9999aa
+URxvt.color8: #303030
+URxvt.color9: #ff0090
+URxvt.color10: #80ff00
+URxvt.color11: #ffba68
+URxvt.color12: #5f5fee
+URxvt.color13: #bb88dd
+URxvt.color14: #4eb4fa
+URxvt.color15: #d0d0d0
+!
+!-- Key Bindings
+!
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
