@@ -7,10 +7,15 @@ import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 import Graphics.X11.ExtraTypes.XF86
 
+import qualified XMonad.StackSet as W
+
 main = xmonad $ defaultConfig {
   borderWidth = 1,
   modMask = mod4Mask,
   workspaces = myWorkspaces,
+  manageHook = manageSpawn
+    <+> composeAll myManagementHooks
+    <+> manageHook defaultConfig,
   terminal = "urxvt",
   startupHook = myStartupHook,
   normalBorderColor = "#666666",
@@ -28,6 +33,14 @@ myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 myStartupHook = setWMName "LG3D"
                 >> spawnHere "nm-applet"
                 >> spawnHere "feh --bg-scale $HOME/.xmonad/background.png"
-                >> spawnOn "1" "google-chrome"
+                >> spawnHere "sleep 15; $HOME/.xmonad/brightness.sh"
+                >> spawnOn "9" "slack"
                 >> spawnOn "8" "stalonetray"
+                >> spawnOn "2" "urxvt"
+                >> spawnOn "1" "google-chrome"
 
+myManagementHooks :: [ManageHook]
+myManagementHooks = [
+    (className =? "stalonetray") --> doF (W.shift "8"),
+    (className =? "Slack") --> doF (W.shift "9")
+  ]

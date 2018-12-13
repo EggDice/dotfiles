@@ -25,4 +25,4 @@ ln -s $parent_path/../vimrc ~/.vimrc
 
 # spell
 mkdir -p ~/.vim/spell
-ln -s $parent_path/../spell ~/.vim/spell/en.utf-8.add
+ln -s $parent_path/../spell/en.utf-8.add ~/.vim/spell/en.utf-8.add
