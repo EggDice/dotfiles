@@ -15,6 +15,7 @@ packages=(
   ffmpeg
   htop
   libnotify-bin
+  lightdm
   mplayer
   network-manager-gnome
   notify-osd
