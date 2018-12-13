@@ -5,6 +5,7 @@ sudo apt-get -qq dist-upgrade
 
 # Install APT packages.
 packages=(
+  arandr
   cowsay
   curl
   default-jre
@@ -13,8 +14,10 @@ packages=(
   feh
   ffmpeg
   htop
+  libnotify-bin
   mplayer
   network-manager-gnome
+  notify-osd
   python-pip
   python3-pip
   rxvt-unicode-256color
