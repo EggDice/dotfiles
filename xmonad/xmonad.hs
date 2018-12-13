@@ -7,10 +7,15 @@ import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 import Graphics.X11.ExtraTypes.XF86
 
+import qualified XMonad.StackSet as W
+
 main = xmonad $ defaultConfig {
   borderWidth = 1,
   modMask = mod4Mask,
   workspaces = myWorkspaces,
+  manageHook = manageSpawn
+    <+> composeAll myManagementHooks
+    <+> manageHook defaultConfig,
   terminal = "urxvt",
   startupHook = myStartupHook,
   normalBorderColor = "#666666",
@@ -34,3 +39,8 @@ myStartupHook = setWMName "LG3D"
                 >> spawnOn "2" "urxvt"
                 >> spawnOn "1" "google-chrome"
 
+myManagementHooks :: [ManageHook]
+myManagementHooks = [
+    (className =? "stalonetray") --> doF (W.shift "8"),
+    (className =? "Slack") --> doF (W.shift "9")
+  ]
