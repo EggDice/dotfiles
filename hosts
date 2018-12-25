@@ -16,7 +16,7 @@ ff02::2 ip6-allrouters
 0.0.0.0 www.facebook.com
 0.0.0.0 facebook.com
 0.0.0.0 coub.com
-0.0.0.0 instagram.com		
+0.0.0.0 instagram.com
 0.0.0.0 www.instagram.com
 
 
@@ -24,7 +24,7 @@ ff02::2 ip6-allrouters
 
 # Adds and malware
 0.0.0.0 thepiratebay.org
-#0.0.0.0 thepiratebay3.org
+0.0.0.0 thepiratebay3.org
 0.0.0.0 rarbg.to
 0.0.0.0 ncore.cc
 0.0.0.0 9gag.com
