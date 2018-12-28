@@ -30,18 +30,10 @@
 	untracked = cyan
 [merge]
 	log = true
-[url "git@github.com:"]
+[url "ssh://git@github.com"]
 	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "https://github.com/"
-[url "git://github.com/"]
 	insteadOf = "github:"
-[url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "https://gist.github.com/"
-[url "git://gist.github.com/"]
-	insteadOf = "gist:"
+	insteadOf = "https://github.com"
 [help]
 	autocorrect = 1
 [user]
@@ -49,5 +41,3 @@
 	email = tamas.kokeny.87@gmail.com
 [credential]
 	helper = cache
-#[url "https://"]
-#	insteadOf = git://
