@@ -125,6 +125,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Editor
+# Editor("alma");
 export EDITOR='vim'
 
+# Locale
+export LC_ALL=en_US.utf8
