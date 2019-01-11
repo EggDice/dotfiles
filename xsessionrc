@@ -1,3 +1,4 @@
+setxkbmap -option "compose:ralt"
 udiskie --tray &
 
 if [ -d "$HOME/bin" ] ; then
