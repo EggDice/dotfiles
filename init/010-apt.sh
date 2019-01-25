@@ -32,6 +32,7 @@ packages=(
   vim-nox
   wine
   wine32
+  xbacklight
   xcompmgr
   xdotool
   xmonad

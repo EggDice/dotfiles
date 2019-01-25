@@ -9,4 +9,6 @@ source ./init/070-slack.sh
 source ./init/080-udiskie.sh
 source ./init/090-lightdm.sh
 source ./init/100-bash.sh
-
+source ./init/110-fonts.sh
+source ./init/120-docker.sh
+source ./init/130-backlight.sh
