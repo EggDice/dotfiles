@@ -25,6 +25,8 @@ main = xmonad $ defaultConfig {
       ((0, xF86XK_AudioLowerVolume), spawn "amixer set Master 2%-"),
       ((0, xF86XK_AudioRaiseVolume), spawn "amixer set Master 2%+"),
       ((0, xF86XK_AudioMute), spawn "amixer set Master toggle"),
+      ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10"),
+      ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10"),
       ((shiftMask, xK_Shift_R), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap hu || setxkbmap us")
     ]
 
