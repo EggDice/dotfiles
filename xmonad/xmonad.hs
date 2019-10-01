@@ -36,13 +36,15 @@ myStartupHook = setWMName "LG3D"
                 >> spawnHere "nm-applet"
                 >> spawnHere "feh --bg-scale $HOME/.xmonad/background.png"
                 >> spawnHere "sleep 15; $HOME/.xmonad/brightness.sh"
-                >> spawnOn "9" "slack"
+                >> spawnOn "8" "slack"
                 >> spawnOn "8" "stalonetray"
+                >> spawnOn "7" "transmission-qt"
                 >> spawnOn "2" "urxvt"
                 >> spawnOn "1" "google-chrome"
 
 myManagementHooks :: [ManageHook]
 myManagementHooks = [
+    (className =? "transmission-qt") --> doF (W.shift "7"),
     (className =? "stalonetray") --> doF (W.shift "8"),
-    (className =? "Slack") --> doF (W.shift "9")
+    (className =? "Slack") --> doF (W.shift "8")
   ]

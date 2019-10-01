@@ -9,6 +9,8 @@
   szalljbeakocsiba = push
   getinthecar = push
   rabasz = rebase
+  yolo = !sh -c 'git commit -m "$(curl -s https://whatthecommit.com/index.txt)"' -
+
 [color]
 	ui = auto
 [core]
