@@ -20,6 +20,7 @@ packages=(
   mplayer
   network-manager-gnome
   notify-osd
+  obs-studio
   python-pip
   python3-pip
   redshift-gtk
