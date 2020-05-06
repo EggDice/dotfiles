@@ -29,8 +29,10 @@ packages=(
   suckless-tools
   stalonetray
   tmux
+  transmission
   ttf-mscorefonts-installer
   vim-nox
+  vlc
   wine
   wine32
   xbacklight

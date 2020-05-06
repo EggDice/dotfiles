@@ -39,7 +39,7 @@ myStartupHook = setWMName "LG3D"
                 >> spawnHere "sleep 15; $HOME/.xmonad/brightness.sh"
                 >> spawnOn "8" "slack"
                 >> spawnOn "8" "stalonetray"
-                >> spawnOn "7" "transmission-qt"
+                >> spawnOn "7" "transmission-gtk"
                 >> spawnOn "2" "urxvt"
                 >> spawnOn "1" "google-chrome"
 
