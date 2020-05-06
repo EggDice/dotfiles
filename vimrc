@@ -128,3 +128,5 @@ let g:molokai_original = 1
 colorscheme darkest-space
 set spell
 set spellfile=~/.vim/spell/en.utf-8.add
+
+set clipboard=unnamedplus

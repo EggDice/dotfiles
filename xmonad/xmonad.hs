@@ -34,6 +34,7 @@ myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 myStartupHook = setWMName "LG3D"
                 >> spawnHere "nm-applet"
+                >> spawnHere "redshift-gtk"
                 >> spawnHere "feh --bg-scale $HOME/.xmonad/background.png"
                 >> spawnHere "sleep 15; $HOME/.xmonad/brightness.sh"
                 >> spawnOn "8" "slack"
