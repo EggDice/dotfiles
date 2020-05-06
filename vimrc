@@ -4,6 +4,9 @@ au BufNewFile,BufRead *.{js,mjs,jsm,es,es6},Jakefile setf javascript
 " remove white-space on edit
 autocmd BufWritePre * %s/\s\+$//e
 
+:set number relativenumber
+:set nu rnu
+
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
