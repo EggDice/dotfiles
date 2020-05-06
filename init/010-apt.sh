@@ -22,6 +22,7 @@ packages=(
   notify-osd
   python-pip
   python3-pip
+  redshift-gtk
   rxvt-unicode-256color
   silversearcher-ag
   sl
