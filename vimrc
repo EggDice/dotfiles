@@ -104,9 +104,9 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_warning_symbol = '⚠'
 map <C-F12> <ESC>:SyntaticCheck<CR>
 
-py3 from powerline.vim import setup as powerline_setup
-py3 powerline_setup()
-py3 del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 " powerline slow escape fix
 if ! has('gui_running')
