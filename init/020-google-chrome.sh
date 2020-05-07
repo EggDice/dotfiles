@@ -8,8 +8,3 @@ rm google-chrome-*.deb
 # Disable incognito
 sudo mkdir -p /etc/opt/chrome/policies/managed/
 sudo ln -s $parent_path/../test_policy.json /etc/opt/chrome/policies/managed/
-
-# hosts-file
-sudo rm /etc/hosts
-sudo ln -s $parent_path/../hosts /etc/hosts
-
