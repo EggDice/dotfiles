@@ -15,6 +15,7 @@ packages=(
   feh
   ffmpeg
   htop
+  imagemagick
   libnotify-bin
   lightdm
   mplayer
