@@ -28,6 +28,7 @@ main = xmonad $ defaultConfig {
       ((0, xF86XK_AudioMicMute), spawn "amixer -D pulse set Capture toggle"),
       ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10"),
       ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10"),
+      ((0, xK_Print), spawn "import png:- | xclip -selection clipboard -t image/png"),
       ((shiftMask, xK_Shift_R), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap hu || setxkbmap us")
     ]
 

@@ -17,3 +17,6 @@ alias g="git"
 alias v="vim"
 alias t="todo"
 alias bigterm="xterm -fa 'Monospace' -fs 20"
+
+# xclip
+alias xclip="xclip -selection c"
