@@ -6,6 +6,7 @@ sudo apt-get -qq dist-upgrade
 # Install APT packages.
 packages=(
   acpi
+  anki
   arandr
   cowsay
   curl
