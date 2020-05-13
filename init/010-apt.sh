@@ -39,6 +39,7 @@ packages=(
   wine
   wine32
   xbacklight
+  xclip
   xcompmgr
   xdotool
   xmonad
