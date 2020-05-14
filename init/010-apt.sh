@@ -15,6 +15,7 @@ packages=(
   docker.io
   feh
   ffmpeg
+  gimp
   htop
   imagemagick
   libnotify-bin
