@@ -1,0 +1,4 @@
+Package: tor tor-geoipdb torbrowser-launcher brave firefox
+Pin: release *
+Pin-Priority: -1
+

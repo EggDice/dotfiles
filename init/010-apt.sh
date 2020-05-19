@@ -57,3 +57,4 @@ if (( ${#packages[@]} > 0 )); then
 fi
 
 sudo chown -R eggdice /usr/local/
+sudo ln -s $parent_path/../preferences /etc/apt/
