@@ -18,6 +18,7 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 pushd ~/.vim/bundle/
 git clone https://github.com/scrooloose/syntastic.git
 git clone https://github.com/szorfein/darkest-space
+git clone https://github.com/bkad/CamelCaseMotion
 popd
 
 # .vimrc

@@ -96,9 +96,6 @@ let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_cpp_compiler_options = "-std=c++17"
 let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_javascript_eslint_exe = 'docker run widerin/alpine-eslint eslint'
-
 let g:syntastic_check_on_open = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_warning_symbol = '⚠'
@@ -130,3 +127,19 @@ set spell
 set spellfile=~/.vim/spell/en.utf-8.add
 
 set clipboard=unnamedplus
+
+let g:camelcasemotion_key = '<leader>'
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
+omap <silent> iw <Plug>CamelCaseMotion_iw
+xmap <silent> iw <Plug>CamelCaseMotion_iw
+omap <silent> ib <Plug>CamelCaseMotion_ib
+xmap <silent> ib <Plug>CamelCaseMotion_ib
+omap <silent> ie <Plug>CamelCaseMotion_ie
+xmap <silent> ie <Plug>CamelCaseMotion_ie
