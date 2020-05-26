@@ -1,3 +1,4 @@
+xinput --set-prop 10 "libinput Natural Scrolling Enabled" 1
 setxkbmap -option "compose:ralt"
 udiskie --tray &
 
