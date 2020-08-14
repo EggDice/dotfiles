@@ -15,10 +15,13 @@ packages=(
   docker.io
   feh
   ffmpeg
+  fzf
   gimp
+  gnustep-gui-runtime
   htop
   imagemagick
   libnotify-bin
+  libsox-fmt-mp3
   lightdm
   mplayer
   network-manager-gnome
@@ -30,6 +33,7 @@ packages=(
   rxvt-unicode-256color
   silversearcher-ag
   sl
+  sox
   suckless-tools
   stalonetray
   tmux

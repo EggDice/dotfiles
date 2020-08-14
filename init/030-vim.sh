@@ -21,6 +21,10 @@ git clone https://github.com/szorfein/darkest-space
 git clone https://github.com/bkad/CamelCaseMotion
 popd
 
+# plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # .vimrc
 ln -s $parent_path/../vimrc ~/.vimrc
 

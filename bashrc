@@ -136,3 +136,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export JAVA_HOME="$(dirname $(dirname $(realpath $(which javac))))"
+
+# Install the fuck
+eval "$(thefuck --alias)"
+
+# fzf
+
+export FZF_DEFAULT_COMMAND='ag -g ""'

@@ -20,3 +20,18 @@ alias bigterm="xterm -fa 'Monospace' -fs 20"
 
 # xclip
 alias xclip="xclip -selection c"
+
+# Pomodoro
+alias pomo="sleep `echo '60 * 25' | bc`; say 'End of pomodoro my friend! Stop Working!'"
+
+function drun () {
+  docker run -i -t --rm --user $(id -u):$(id -g) -v `pwd`:`pwd` -w `pwd` $@
+}
+
+function dsrun () {
+  docker run -i -t --rm -v `pwd`:`pwd` -w `pwd` $@
+}
+
+
+
+
