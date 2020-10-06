@@ -29,7 +29,7 @@ main = xmonad $ defaultConfig {
       ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10"),
       ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10"),
       ((0, xK_Print), spawn "import png:- | xclip -selection clipboard -t image/png"),
-      ((shiftMask, xK_Shift_R), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap hu || setxkbmap us")
+      ((shiftMask, xK_Shift_R), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap hu qwerty || setxkbmap us")
     ]
 
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
