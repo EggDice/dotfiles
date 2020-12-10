@@ -6,7 +6,10 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
+
+# Colors
 alias ls="ls --color --group-directories-first"
+alias grep="grep --color=auto"
 
 # be nice
 alias please=sudo
