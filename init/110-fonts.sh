@@ -5,5 +5,5 @@ git clone https://github.com/ryanoasis/nerd-fonts /var/tmp/nerd-fonts
 pushd /var/tmp/nerd-fonts
 ./install.sh Terminus
 popd
-rm -r /var/tmp/nerd-fonts
+rm -rf /var/tmp/nerd-fonts
 

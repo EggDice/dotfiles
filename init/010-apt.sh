@@ -36,6 +36,7 @@ packages=(
   sox
   suckless-tools
   stalonetray
+  thefuck
   tmux
   transmission
   ttf-mscorefonts-installer
