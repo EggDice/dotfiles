@@ -39,6 +39,7 @@ packages=(
   thefuck
   tmux
   transmission
+  tree
   ttf-mscorefonts-installer
   vim-nox
   vlc
