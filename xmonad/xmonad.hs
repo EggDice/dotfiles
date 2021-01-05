@@ -43,7 +43,7 @@ myStartupHook = setWMName "LG3D"
                 >> spawnOn "8" "stalonetray"
                 >> spawnOn "7" "transmission-gtk"
                 >> spawnOn "2" "urxvt"
-                >> spawnOn "1" "google-chrome"
+                >> spawnOn "1" "google-chrome --force-dark-mode"
 
 myManagementHooks :: [ManageHook]
 myManagementHooks = [
