@@ -22,8 +22,8 @@ main = xmonad $ defaultConfig {
   focusedBorderColor = "#000000"
   } `additionalKeys`
     [
-      ((0, xF86XK_AudioLowerVolume), spawn "amixer set Master 2%-"),
-      ((0, xF86XK_AudioRaiseVolume), spawn "amixer set Master 2%+"),
+      ((0, xF86XK_AudioLowerVolume), spawn "amixer -c 1 set Master 2%-"),
+      ((0, xF86XK_AudioRaiseVolume), spawn "amixer -c 1 set Master 2%+"),
       ((0, xF86XK_AudioMute), spawn "amixer -D pulse set Master 1+ toggle"),
       ((0, xF86XK_AudioMicMute), spawn "amixer -D pulse set Capture toggle"),
       ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10"),
@@ -36,7 +36,7 @@ myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 myStartupHook = setWMName "LG3D"
                 >> spawnHere "nm-applet"
-                >> spawnHere "redshift-gtk"
+                >> spawnHere "blueman-applet"
                 >> spawnHere "feh --bg-scale $HOME/.xmonad/background.png"
                 >> spawnHere "sleep 15; $HOME/.xmonad/brightness.sh"
                 >> spawnOn "8" "slack"

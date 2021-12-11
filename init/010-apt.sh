@@ -8,6 +8,7 @@ packages=(
   acpi
   anki
   arandr
+  blueman
   cowsay
   curl
   default-jre

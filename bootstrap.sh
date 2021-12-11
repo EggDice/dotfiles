@@ -11,6 +11,6 @@ source ./init/090-lightdm.sh
 source ./init/100-bash.sh
 source ./init/110-fonts.sh
 source ./init/120-docker.sh
-source ./init/130-backlight.sh
-source ./init/140-bazel.sh
-source ./init/150-hosts.sh
+source ./init/130-bazel.sh
+source ./init/140-hosts.sh
+source ./init/150-thefuck.sh
