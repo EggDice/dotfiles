@@ -83,24 +83,6 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 set wildignore+=bower_components
 set wildignore+=node_modules
 
-" Disable Syntastic for HTML
-let syntastic_mode_map = { 'passive_filetypes': ['html'] }
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_typescript_checkers = ['tslint', 'tsc']
-let g:syntastic_cpp_cpplint_exec = 'cpplint'
-let g:syntastic_cpp_compiler_options = "-std=c++17"
-let g:syntastic_cpp_config_file = '.syntastic_cpp_config'
-let g:syntastic_check_on_open = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_warning_symbol = '⚠'
-map <C-F12> <ESC>:SyntaticCheck<CR>
-
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
@@ -151,11 +133,33 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" Linting
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'javascriptreact': ['eslint'],
+\   'typescript': ['eslint', 'tsserver'],
+\   'typescriptreact': ['eslint', 'tsserver'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'javascriptreact': ['eslint'],
+\   'typescript': ['eslint'],
+\   'typescriptreact': ['eslint'],
+\}
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = "⚠️"
+let g:ale_sign_warning = "w"
+let g:ale_sign_info = "ℹ"
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
+
 " Plugins
 call plug#begin()
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 

@@ -31,6 +31,9 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+ffmpeg_resolve() {
+    ffmpeg -i $1 -vcodec mjpeg -q:v 2 -acodec pcm_s16be -q:a 0 -f mov $2
+}
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
