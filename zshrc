@@ -40,7 +40,7 @@ if [ -f ~/.aliases ]; then
 fi
 
 # coreutils
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
 # EDITOR
 export EDITOR="vim"

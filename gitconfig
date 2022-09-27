@@ -18,6 +18,7 @@
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	editor = vim
+	hooksPath = /usr/local/dd/global_hooks
 [color "branch"]
 	current = yellow reverse
 	local = yellow
