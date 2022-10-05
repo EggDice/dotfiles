@@ -17,7 +17,7 @@ zstyle ':vcs_info:git:*' formats '%b'
 setopt PROMPT_SUBST
 
 precmd() {
-  vcs_info
+  vcs_info 2> /dev/null
   NEWLINE=$'\n'
   if [[ -n ${vcs_info_msg_0_} ]]; then
     STATUS=$(command git status --porcelain 2> /dev/null | tail -n1)
@@ -47,3 +47,5 @@ export EDITOR="vim"
 
 # Install the fuck
 eval "$(thefuck --alias)"
+
+export DATADOG_ROOT="/Users/tamas.kokeny/Projects"
