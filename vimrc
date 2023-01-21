@@ -146,6 +146,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'bkad/CamelCaseMotion'
 
 call plug#end()
 
