@@ -44,6 +44,7 @@ packages=(
   tree
   ttf-mscorefonts-installer
   vim-nox
+  nvim
   vlc
   wine
   wine32

@@ -27,6 +27,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # .vimrc
 ln -s $parent_path/../vimrc ~/.vimrc
+mkdir ~/.config/nvim
+ln -s $parent_path/../nvim/init.vim ~/.config/nvim/init.vim
+ln -s $parent_path../nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 
 # spell
 mkdir -p ~/.vim/spell
