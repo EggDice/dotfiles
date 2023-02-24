@@ -45,3 +45,5 @@
 	email = tamas.kokeny.87@gmail.com
 [credential]
 	helper = cache
+[push]
+  autoSetupRemote = true
