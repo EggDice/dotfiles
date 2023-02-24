@@ -146,3 +146,16 @@ eval "$(thefuck --alias)"
 # fzf
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+apple_keyboard() {
+  DEVICE_ID=`xinput -list | grep -i Apple | sed -n 's/.*id=\([0-9]*\) *.\[.*/\1/p'`
+  setxkbmap -device $DEVICE_ID -option altwin:swap_lalt_lwin
+}
+
+export DENO_INSTALL="/home/eggdice/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+

@@ -5,7 +5,7 @@ au BufNewFile,BufRead *.{js,mjs,jsm,es,es6},Jakefile setf javascript
 autocmd BufWritePre * %s/\s\+$//e
 
 :set number relativenumber
-:set nu rnu
+:set textwidth=100
 
 
 " Quickly edit/reload the vimrc file
@@ -23,9 +23,9 @@ set mouse=a
 set nu
 set ruler
 if exists('+colorcolumn')
-  set colorcolumn=80
+  set colorcolumn=100
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
 endif
 highlight ColorColumn ctermbg=7
 
@@ -306,3 +306,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" remove search highlight hiting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[

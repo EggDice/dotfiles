@@ -44,7 +44,7 @@ URxvt.saveLines: 8192
 !! Scroll inside of subscreen, less etc.
 URxvt.secondaryWheel: true
 URxvt.cursorUnderline: false
-URxvt*font: xft:TerminessTTF Nerd Font:medium:size=12:antialias=true
+URxvt*font: xft:TerminessTTF Nerd Font:medium:size=11:antialias=true
 URxvt.transparent: false
 URxvt.borderless: true
 URxvt.shading: 35

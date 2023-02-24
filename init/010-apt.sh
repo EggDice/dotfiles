@@ -24,6 +24,7 @@ packages=(
   libnotify-bin
   libsox-fmt-mp3
   lightdm
+  mmv
   mplayer
   network-manager-gnome
   notify-osd
