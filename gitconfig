@@ -10,15 +10,12 @@
   getinthecar = push
   rabasz = rebase
   yolo = !sh -c 'git commit -m \"$(curl -s http://whatthecommit.com/index.txt)\"' -
-
-
 [color]
 	ui = auto
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	editor = vim
-	hooksPath = /usr/local/dd/global_hooks
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -37,7 +34,7 @@
 [url "ssh://git@github.com"]
 	insteadOf = "gh:"
 	insteadOf = "github:"
-	insteadOf = "https://github.com"
+ 	insteadOf = "https://github.com"
 [help]
 	autocorrect = 1
 [user]
