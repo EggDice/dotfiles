@@ -8,17 +8,56 @@ import System.IO
 import Graphics.X11.ExtraTypes.XF86
 import XMonad.Layout.MultiColumns
 import XMonad.Layout.PerWorkspace
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.StatusBar
+import XMonad.Hooks.StatusBar.PP
+import XMonad.Util.Loggers
+
 
 import qualified XMonad.StackSet as W
 
 
-main = xmonad $ defaultConfig {
+main = xmonad
+  . ewmhFullscreen
+  . ewmh
+  . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
+  $ myConfig
+
+myXmobarPP = def
+    { ppSep             = magenta " • "
+    , ppTitleSanitize   = xmobarStrip
+    , ppCurrent         = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
+    , ppHidden          = white . wrap " " ""
+    , ppHiddenNoWindows = lowWhite . wrap " " ""
+    , ppUrgent          = red . wrap (yellow "!") (yellow "!")
+    , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins]
+    , ppExtras          = [logTitles formatFocused formatUnfocused]
+    }
+  where
+    formatFocused   = wrap (white    "[") (white    "]") . magenta . ppWindow
+    formatUnfocused = wrap (lowWhite "[") (lowWhite "]") . blue    . ppWindow
+
+    -- | Windows should have *some* title, which should not not exceed a
+    -- sane length.
+    ppWindow :: String -> String
+    ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 30
+
+    blue, lowWhite, magenta, red, white, yellow :: String -> String
+    magenta  = xmobarColor "#ff79c6" ""
+    blue     = xmobarColor "#bd93f9" ""
+    white    = xmobarColor "#f8f8f2" ""
+    yellow   = xmobarColor "#f1fa8c" ""
+    red      = xmobarColor "#ff5555" ""
+    lowWhite = xmobarColor "#bbbbbb" ""
+
+myConfig = def {
   borderWidth = 1,
   modMask = mod4Mask,
   workspaces = myWorkspaces,
   manageHook = manageSpawn
     <+> composeAll myManagementHooks
-    <+> manageHook defaultConfig,
+    <+> manageHook def,
   terminal = "urxvt",
   startupHook = myStartupHook,
   normalBorderColor = "#666666",
@@ -51,16 +90,19 @@ myStartupHook = setWMName "LG3D"
                 >> spawnHere "blueman-applet"
                 >> spawnHere "feh --bg-scale $HOME/.xmonad/background.png"
                 >> spawnHere "sleep 15; $HOME/.xmonad/brightness.sh"
+                >> spawnHere "xfce4-power-manager"
                 >> spawnOn "9" "whatsapp-for-linux"
                 >> spawnOn "9" "slack"
-                >> spawnOn "9" "stalonetray"
+                >> spawnOn "9" "discord"
+                >> spawnOn "9" "skypeforlinux"
                 >> spawnOn "8" "transmission-gtk"
                 >> spawnOn "2" "urxvt"
                 >> spawnOn "1" "google-chrome --force-dark-mode"
+                >> broadcastMessage ToggleStruts
 
 myManagementHooks :: [ManageHook]
 myManagementHooks = [
     (className =? "transmission-qt") --> doF (W.shift "8"),
-    (className =? "stalonetray") --> doF (W.shift "9"),
-    (className =? "Slack") --> doF (W.shift "9")
+    (className =? "Slack") --> doF (W.shift "9"),
+    (className =? "discord") --> doF (W.shift "9")
   ]

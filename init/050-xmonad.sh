@@ -5,6 +5,7 @@ mkdir -p ~/.xmonad
 ln -s $parent_path/../xmonad/xmonad.hs ~/.xmonad/xmonad.hs
 ln -s $parent_path/../xmonad/background.png ~/.xmonad/background.png
 ln -s $parent_path/../xsessionrc ~/.xsessionrc
+ln -s $parent_path/../xmonad/xmobarrc ~/.xmobarrc
 
 # battery
 

@@ -9,6 +9,7 @@ packages=(
   anki
   arandr
   blueman
+  cabal-install
   cowsay
   curl
   default-jre
@@ -23,6 +24,8 @@ packages=(
   imagemagick
   libnotify-bin
   libsox-fmt-mp3
+  libghc-xmonad-contrib-dev
+  libghc-xmonad-dev
   lightdm
   mmv
   mplayer
@@ -37,10 +40,10 @@ packages=(
   sl
   sox
   suckless-tools
-  stalonetray
   thefuck
   tmux
   transmission
+  trayer
   tree
   ttf-mscorefonts-installer
   vim-nox
@@ -52,6 +55,7 @@ packages=(
   xclip
   xcompmgr
   xdotool
+  xmobar
   xmonad
 )
 
