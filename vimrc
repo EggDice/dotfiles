@@ -4,6 +4,9 @@ au BufNewFile,BufRead *.{js,mjs,jsm,es,es6},Jakefile setf javascript
 " remove white-space on edit
 autocmd BufWritePre * %s/\s\+$//e
 
+autocmd BufWritePre *.{tsx,ts,js,mjs,es,jsm,es,es6} :CocCommand tsserver.organizeImports
+autocmd BufWritePre *.{tsx,ts,js,mjs,es,jsm,es,es6} :CocCommand eslint.executeAutoFix
+
 :set number relativenumber
 :set textwidth=100
 
@@ -301,9 +304,9 @@ nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <space>j  :call CocAction('diagnosticNext')<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <space>k  :call CocAction('diagnosticPrevious')<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
