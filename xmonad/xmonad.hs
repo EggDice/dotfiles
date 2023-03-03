@@ -58,7 +58,7 @@ myConfig = def {
   manageHook = manageSpawn
     <+> composeAll myManagementHooks
     <+> manageHook def,
-  terminal = "urxvt",
+  terminal = "urxvt -e /usr/bin/zsh",
   startupHook = myStartupHook,
   normalBorderColor = "#666666",
   layoutHook = myLayout,
@@ -75,7 +75,11 @@ myConfig = def {
       ((shiftMask, xK_Shift_R), spawn "(setxkbmap -query | grep -q 'layout:\\s\\+us') && setxkbmap hu qwerty || setxkbmap us")
     ]
 
-myLayout = onWorkspace "9" Full $ avoidStruts $ tiled ||| Mirror tiled ||| multiCol [1] 1 0.01 (-0.5) ||| Full
+myLayout = onWorkspace "1" Full
+  $ onWorkspace "messages" Full
+  $ onWorkspace "dev-run" (multiCol [1] 1 0.01 (-0.5))
+  $ avoidStruts
+  $ tiled ||| Mirror tiled ||| multiCol [1] 1 0.01 (-0.5) ||| Full
     where
         tiled = Tall nmaster delta tiled_ratio
         nmaster = 1
@@ -83,7 +87,7 @@ myLayout = onWorkspace "9" Full $ avoidStruts $ tiled ||| Mirror tiled ||| multi
         tiled_ratio = 1/2
         dishes_ratio = 24/100
 
-myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+myWorkspaces = ["browser", "dev-vim", "dev-run", "term", "5", "6", "7", "torrent", "messages"]
 
 myStartupHook = setWMName "LG3D"
                 >> spawnHere "nm-applet"
@@ -91,18 +95,25 @@ myStartupHook = setWMName "LG3D"
                 >> spawnHere "feh --bg-scale $HOME/.xmonad/background.png"
                 >> spawnHere "sleep 15; $HOME/.xmonad/brightness.sh"
                 >> spawnHere "xfce4-power-manager"
-                >> spawnOn "9" "whatsapp-for-linux"
-                >> spawnOn "9" "slack"
-                >> spawnOn "9" "discord"
-                >> spawnOn "9" "skypeforlinux"
-                >> spawnOn "8" "transmission-gtk"
-                >> spawnOn "2" "urxvt"
-                >> spawnOn "1" "google-chrome --force-dark-mode"
+                >> spawnOn "messages" "whatsapp-for-linux"
+                >> spawnOn "messages" "slack"
+                >> spawnOn "messages" "discord"
+                >> spawnOn "messages" "skypeforlinux"
+                >> spawnOn "torrent" "transmission-gtk"
+                >> spawnOn "dev-vim" "urxvt -e zsh -c 'cd ~/Projects/monorepo/; vim; zsh'"
+                >> spawnOn "dev-run" "urxvt -e zsh -c 'cd ~/Projects/monorepo/; ls; zsh'"
+                >> spawnOn "dev-run" "urxvt -e zsh -c 'cd ~/Projects/monorepo/; ls; zsh'"
+                >> spawnOn "dev-run" "urxvt -e zsh -c 'cd ~/Projects/monorepo/; ls; zsh'"
+                >> spawnOn "dev-run" "urxvt -e zsh -c 'cd ~/Projects/monorepo/; ls; zsh'"
+                >> spawnOn "term" "urxvt -e zsh"
+                >> spawnOn "browser" "google-chrome --force-dark-mode"
                 >> broadcastMessage ToggleStruts
 
 myManagementHooks :: [ManageHook]
 myManagementHooks = [
-    (className =? "transmission-qt") --> doF (W.shift "8"),
-    (className =? "Slack") --> doF (W.shift "9"),
-    (className =? "discord") --> doF (W.shift "9")
+    (className =? "transmission-qt") --> doF (W.shift "torrent"),
+    (className =? "Slack") --> doF (W.shift "messages"),
+    (className =? "discord") --> doF (W.shift "messages"),
+    (className =? "skypeforlinux") --> doF (W.shift "messages"),
+    (className =? "whatsapp-for-linux") --> doF (W.shift "messages")
   ]

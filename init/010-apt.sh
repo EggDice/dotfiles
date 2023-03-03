@@ -57,6 +57,7 @@ packages=(
   xdotool
   xmobar
   xmonad
+  zsh
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))

@@ -4,7 +4,6 @@ au BufNewFile,BufRead *.{js,mjs,jsm,es,es6},Jakefile setf javascript
 " remove white-space on edit
 autocmd BufWritePre * %s/\s\+$//e
 
-autocmd BufWritePre *.{tsx,ts,js,mjs,es,jsm,es,es6} :CocCommand tsserver.organizeImports
 autocmd BufWritePre *.{tsx,ts,js,mjs,es,jsm,es,es6} :CocCommand eslint.executeAutoFix
 
 :set number relativenumber
