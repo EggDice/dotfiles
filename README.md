@@ -2,7 +2,9 @@
 
 
 ```
-cd; git clone https://github.com/EggDice/dotfiles ~/Projects/dotfiles
+cd
+mkdir -p ~/Projects
+git clone https://github.com/EggDice/dotfiles ~/Projects/dotfiles
 cd ~/Projects/dotfiles/
 ./bootstrap-linux.sh
 ```
@@ -10,7 +12,9 @@ cd ~/Projects/dotfiles/
 or
 
 ```
-cd; git clone https://github.com/EggDice/dotfiles ~/Projects/dotfiles
+cd
+mkdir -p ~/Projects
+git clone https://github.com/EggDice/dotfiles ~/Projects/dotfiles
 cd ~/Projects/dotfiles/
 ./bootstrap-mac.sh
 ```
