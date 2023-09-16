@@ -1,0 +1,16 @@
+source ./helpers.sh
+source ./init/apt.sh
+source ./init/google-chrome.sh
+source ./init/vim.sh
+source ./init/git.sh
+source ./init/xmonad.sh
+source ./init/urxvt.sh
+source ./init/slack.sh
+source ./init/udiskie.sh
+source ./init/lightdm.sh
+source ./init/bash.sh
+source ./init/fonts.sh
+source ./init/docker.sh
+source ./init/bazel.sh
+source ./init/hosts.sh
+source ./init/thefuck.sh
