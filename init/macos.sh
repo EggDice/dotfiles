@@ -3,7 +3,7 @@
 # Security
 
 # Check if Terminal has Full Disk Access
-if ! ls ~/Library/Safari &>/dev/null; then
+if ! ls ~/Downloads &>/dev/null; then
     # Prompt user to give Terminal Full Disk Access
     osascript -e 'display dialog "Please grant Full Disk Access to Terminal in the next window." buttons {"OK"} default button "OK"'
     osascript -e 'tell application "System Preferences"
@@ -19,6 +19,8 @@ fi
 # Brew
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/eggdice/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew install --cask anki
 
