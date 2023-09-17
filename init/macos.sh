@@ -51,6 +51,7 @@ brew install mmv
 brew install neovim
 brew install node
 brew install --cask obs
+brew install --cask skype
 brew install sl
 brew install --cask slack
 brew install sox
