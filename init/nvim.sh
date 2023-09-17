@@ -4,11 +4,11 @@ parent_path=$( cd "$(dirname "$0")" ; pwd -P )
 pip3 install powerline-status
 
 # .vimrc
-ln -s $parent_path/../vimrc ~/.vimrc
+ln -s $parent_path/vimrc ~/.vimrc
 mkdir ~/.config/nvim
-ln -s $parent_path/../nvim/init.vim ~/.config/nvim/init.vim
-ln -s $parent_path../nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -s $parent_path/nvim/init.vim ~/.config/nvim/init.vim
+ln -s $parent_path/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 
 # spell
 mkdir -p ~/.vim/spell
-ln -s $parent_path/../spell/en.utf-8.add ~/.vim/spell/en.utf-8.add
+ln -s $parent_path/spell/en.utf-8.add ~/.vim/spell/en.utf-8.add
