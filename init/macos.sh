@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Security
+
 # Check if Terminal has Full Disk Access
 if ! tccutil check "com.apple.Terminal" "system.filesystem"; then
     # Prompt user to give Terminal Full Disk Access
@@ -14,4 +16,20 @@ else
     echo "Terminal already has Full Disk Access."
 fi
 
+# Brew
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install --cask anki
+
+# docker
+
+brew install qemu
+brew install minikube
+brew install docker
+brew install docker-compose
+
+bash minikube start
+eval $(minikube docker-env)
+echo "`minikube ip` docker.local" | sudo tee -a /etc/hosts > /dev/null
+install docker-credential-helper
