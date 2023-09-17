@@ -70,6 +70,8 @@ brew install docker
 brew install docker-compose
 
 minikube start
-eval $(minikube docker-env)
-echo "`minikube ip` docker.local" | sudo tee -a /etc/hosts > /dev/null
-install docker-credential-helper
+
+if ! grep -q "$(minikube ip) docker.local" /etc/hosts; then
+  echo "`minikube ip` docker.local" | sudo tee -a /etc/hosts > /dev/null
+fi
+

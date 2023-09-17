@@ -1,4 +1,4 @@
-parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+parent_path=$( cd "$(dirname "$0")" ; pwd -P )
 
 ssh-keygen -t ed25519 -C "tamas.kokeny.87@gmail.com"
 

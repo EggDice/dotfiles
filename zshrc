@@ -48,4 +48,4 @@ export EDITOR="vim"
 # Install the fuck
 eval "$(thefuck --alias)"
 
-export DATADOG_ROOT="/Users/tamas.kokeny/Projects"
+eval $(minikube docker-env)
