@@ -13,3 +13,5 @@ if ! tccutil check "com.apple.Terminal" "system.filesystem"; then
 else
     echo "Terminal already has Full Disk Access."
 fi
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
