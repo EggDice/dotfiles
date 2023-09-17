@@ -33,6 +33,7 @@ fi
 
 brew install --cask amethyst
 brew install --cask anki
+brew install coreutils
 brew install cowsay
 brew install deno
 brew install --cask discord
