@@ -3,6 +3,17 @@ parent_path=$( cd "$(dirname "$0")" ; pwd -P )
 # powerline
 pip3 install powerline-status
 
+# Plug
+mkdir -p ~/.vim/autoload ~/.vim/bundle
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Colorscheme
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+pushd ~/.vim/bundle/
+git clone https://github.com/szorfein/darkest-space
+popd
+
 # .vimrc
 ln -s $parent_path/vimrc ~/.vimrc
 mkdir ~/.config/nvim
