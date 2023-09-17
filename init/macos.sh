@@ -3,7 +3,7 @@
 # Security
 
 # Check if Terminal has Full Disk Access
-if ! tccutil check "com.apple.Terminal" "system.filesystem"; then
+if ! ls ~/Library/Safari &>/dev/null; then
     # Prompt user to give Terminal Full Disk Access
     osascript -e 'display dialog "Please grant Full Disk Access to Terminal in the next window." buttons {"OK"} default button "OK"'
     osascript -e 'tell application "System Preferences"
