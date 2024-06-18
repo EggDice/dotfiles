@@ -32,7 +32,7 @@ precmd() {
 }
 
 # fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" 2> /dev/null'
 
 # aliases
 if [ -f ~/.aliases ]; then
