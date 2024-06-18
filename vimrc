@@ -151,6 +151,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'tpope/vim-fugitive'
 Plug 'github/copilot.vim'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 

@@ -43,9 +43,16 @@ fi
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
 # EDITOR
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # Install the fuck
 eval "$(thefuck --alias)"
 
 eval $(minikube docker-env)
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/eggdice/Downloads/google-cloud-sdk 2/path.zsh.inc' ]; then . '/Users/eggdice/Downloads/google-cloud-sdk 2/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/eggdice/Downloads/google-cloud-sdk 2/completion.zsh.inc' ]; then . '/Users/eggdice/Downloads/google-cloud-sdk 2/completion.zsh.inc'; fi

@@ -2,6 +2,7 @@
 	ci = commit
 	p = push
 	co = checkout
+	c-p = cherry-pick
 	br = branch
 	st = status
 	df = diff --color --color-words --abbrev

@@ -1,0 +1,25 @@
+{
+  "title": "Custom Hyper Terminal Open",
+  "rules": [
+    {
+      "description": "Shift + Option + Enter to open Hyper Terminal",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "return_or_enter",
+            "modifiers": {
+              "mandatory": ["shift", "option"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -na 'Hyper'"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

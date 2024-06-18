@@ -10,7 +10,7 @@ module.exports = {
         // default font size in pixels for all tabs
         fontSize: 12,
         // font family with optional fallbacks
-        fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+        fontFamily: '"Monaspace Krypton", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
         // default font weight: 'normal' or 'bold'
         fontWeight: 'normal',
         // font weight for bold characters: 'normal' or 'bold'
@@ -133,6 +133,8 @@ module.exports = {
         hyperclean: {
           hideTabs: true, // default: false
         },
+        // Set the number of rows to be persisted in terminal buffer for scrolling
+        scrollback: 100000,
     },
     // a list of plugins to fetch and install from npm
     // format: [@org/]project[#version]
