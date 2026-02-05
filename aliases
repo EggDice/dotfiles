@@ -38,6 +38,133 @@ function dsrun () {
   docker run -i -t --rm -v `pwd`:`pwd` -w `pwd` $@
 }
 
+function cd_to_dir () {
+    local selected_dir
+    selected_dir=$(fd -t d . "$1" | fzf +m --height 50% --preview 'tree -C {}')
+    if [[ -n "$selected_dir" ]]; then
+        # Change to the selected directory
+        cd "$selected_dir" || return 1
+    fi
+}
 
+alias sd='cd_to_dir .'
 
+function gif2webp() {
+    local -A opts
+    zparseopts -E -D -A opts s: q: f:
+    [[ -z "$1" ]] && echo "Usage: gif2webp <file> [out] [-s size] [-q quality] [-f fps]" && return 1
 
+    local input="$1"
+    local output="${2:-${1%.*}.webp}"
+    [[ -d "$output" ]] && output="${output%/}/$(basename "${1%.*}.webp")"
+
+    local size="${opts[-s]:-1080}"
+    local quality="${opts[-q]:-40}"
+    local fps="${opts[-f]}"
+
+    local fps_cmd=()
+    # For GIFs, we use -resample to change FPS effectively
+    [[ -n "$fps" ]] && fps_cmd=(-resample "$fps")
+
+    echo "🎨 GIF -> WebP [${size}px, Q:${quality}${fps:+, ${fps}fps}]..."
+    magick "$input" -coalesce "${fps_cmd[@]}" -resize "${size}x${size}>" \
+           -quality "$quality" -define webp:method=6 -layers optimize "$output"
+
+    [[ $? -eq 0 ]] && echo "✅ Done: $output ($(du -h "$output" | cut -f1))"
+}
+
+function mov2gif() {
+    local -A opts
+    zparseopts -E -D -A opts s: f:
+    [[ -z "$1" ]] && echo "Usage: mov2gif <file> [out] [-s size] [-f fps]" && return 1
+
+    local input="$1"
+    local output="${2:-${1%.*}.gif}"
+    [[ -d "$output" ]] && output="${output%/}/$(basename "${1%.*}.gif")"
+
+    local size="${opts[-s]:-1080}"
+    local fps="${opts[-f]:-12}"
+
+    echo "🎞️  MOV -> GIF [${size}px, ${fps}fps]..."
+    ffmpeg -v warning -i "$input" \
+        -vf "fps=${fps},scale=${size}:${size}:force_original_aspect_ratio=decrease:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=128[p];[s1][p]paletteuse" \
+        -y "$output"
+
+    [[ $? -eq 0 ]] && echo "✅ Done: $output ($(du -h "$output" | cut -f1))"
+}
+
+function mov2webp() {
+    local -A opts
+    zparseopts -E -D -A opts s: q: f:
+    [[ -z "$1" ]] && echo "Usage: mov2webp <file> [out] [-s size] [-q quality] [-f fps]" && return 1
+
+    local input="$1"
+    local output="$2"
+    local size="${opts[-s]:-1080}"
+    local quality="${opts[-q]:-40}"
+    local fps="${opts[-f]:-12}"
+
+    local tmp_gif=$(mktemp -t intermediate.XXXXXX.gif)
+    trap "rm -f '$tmp_gif'" EXIT INT TERM
+
+    # Chain with specific parameters
+    mov2gif "$input" "$tmp_gif" -s "$size" -f "$fps" && \
+    gif2webp "$tmp_gif" "$output" -s "$size" -q "$quality"
+}
+
+function webp2webp() {
+    local -A opts
+    # The -E flag is the key to reading flags placed at the end of the command
+    zparseopts -E -D -A opts s: q: f:
+    [[ -z "$1" ]] && echo "Usage: webp2webp <file> [out] [-s size] [-q quality] [-f fps]" && return 1
+
+    local input="$1"
+    local output="${2:-${1%.*}_min.webp}"
+    [[ -d "$output" ]] && output="${output%/}/$(basename "${1%.*}.webp")"
+
+    local size="${opts[-s]:-1080}"
+    local quality="${opts[-q]:-40}"
+    local fps="${opts[-f]}"
+
+    local delay_cmd=()
+    if [[ -n "$fps" ]]; then
+        local delay=$(( 100 / fps ))
+        delay_cmd=(-set delay "$delay")
+        echo "🔄 Optimizing WebP [${size}px, Q:${quality}, ${fps}fps]..."
+    else
+        echo "🔄 Optimizing WebP [${size}px, Q:${quality}, Original FPS]..."
+    fi
+
+    magick "$input" -coalesce "${delay_cmd[@]}" \
+           -resize "${size}x${size}>" -quality "$quality" \
+           -define webp:method=6 -layers optimize "$output"
+
+    [[ $? -eq 0 ]] && echo "✅ Done: $output ($(du -h "$output" | cut -f1))"
+}
+
+function png2webp() {
+    local -A opts
+    zparseopts -E -D -A opts s: q:
+    [[ -z "$1" ]] && echo "Usage: png2webp <file> [out] [-s size] [-q quality]" && return 1
+
+    local input="$1"
+    local output="${2:-${1%.*}.webp}"
+    [[ -d "$output" ]] && output="${output%/}/$(basename "${1%.*}.webp")"
+
+    local size="${opts[-s]:-1080}"
+    local quality="${opts[-q]:-40}"
+
+    echo "🖼️  Static PNG -> WebP [${size}px, Q:${quality}]..."
+
+    # -strip: Removes metadata (ICC profiles, EXIF) to save space
+    # -define webp:lossless=false: Ensures the quality flag is respected
+    magick "$input" \
+        -strip \
+        -resize "${size}x${size}>" \
+        -quality "$quality" \
+        -define webp:lossless=false \
+        -define webp:method=6 \
+        "$output"
+
+    [[ $? -eq 0 ]] && echo "✅ Done: $output ($(du -h "$output" | cut -f1))"
+}

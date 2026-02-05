@@ -19,7 +19,6 @@ filetype plugin indent on
 
 syntax enable
 set background=dark
-colorscheme delek
 
 set mouse=a
 set nu
@@ -152,6 +151,8 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'tpope/vim-fugitive'
 Plug 'github/copilot.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'paulo-granthon/hyper.nvim'
+Plug 'rhysd/vim-grammarous'
 
 call plug#end()
 
@@ -313,3 +314,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " remove search highlight hiting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
+
+set termguicolors
+colorscheme hyper

@@ -56,3 +56,45 @@ if [ -f '/Users/eggdice/Downloads/google-cloud-sdk 2/path.zsh.inc' ]; then . '/U
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/eggdice/Downloads/google-cloud-sdk 2/completion.zsh.inc' ]; then . '/Users/eggdice/Downloads/google-cloud-sdk 2/completion.zsh.inc'; fi
+
+# bun completions
+[ -s "/Users/eggdice/.bun/_bun" ] && source "/Users/eggdice/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Rust
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH="/Applications/Inkscape.app/Contents/MacOS:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/eggdice/.codeium/windsurf/bin:$PATH"
+
+# .NET SDK (latest version via Homebrew)
+export PATH="/opt/homebrew/opt/dotnet/bin:$PATH"
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
+
