@@ -1,0 +1,31 @@
+{
+  "title": "Custom Shift Enter (Terminal + Hyper)",
+  "rules": [
+    {
+      "description": "Shift+Enter -> ESC then Enter (Terminal + Hyper)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^co\\.zeit\\.hyper$",
+                "^io\\.hyper\\.app$"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "return_or_enter",
+            "modifiers": { "mandatory": ["shift"] }
+          },
+          "to": [
+            { "key_code": "escape" },
+            { "key_code": "return_or_enter" }
+          ]
+        }
+      ]
+    }
+  ]
+}
