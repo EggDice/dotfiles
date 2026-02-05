@@ -28,8 +28,11 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # .vimrc
 ln -s $parent_path/../vimrc ~/.vimrc
 mkdir ~/.config/nvim
-ln -s $parent_path/../nvim/init.vim ~/.config/nvim/init.vim
+ln -s $parent_path/../nvim/init.lua ~/.config/nvim/init.lua
 ln -s $parent_path../nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+mkdir ~/.config/nvim/lua/config -p
+ln -s $parent_path/../nvim/lua/config/lazy.lua ~/.config/nvim/lua/config/lazy.lua
+ln -s $parent_path/../nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
 
 # spell
 mkdir -p ~/.vim/spell
