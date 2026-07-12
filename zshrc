@@ -98,3 +98,25 @@ export PATH="/Users/eggdice/.codeium/windsurf/bin:$PATH"
 export PATH="/opt/homebrew/opt/dotnet/bin:$PATH"
 export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/eggdice/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+# Added by Hugging Face CLI installer
+export PATH="/Users/eggdice/.local/bin:$PATH"
+
+
+# Activity Tracker — shell history with timestamps
+setopt EXTENDED_HISTORY          # Save timestamp with each command
+setopt INC_APPEND_HISTORY        # Write to history immediately, not on shell exit
+export HISTSIZE=50000            # Commands to keep in memory
+export SAVEHIST=50000            # Commands to save to file
+export HISTFILE="$HOME/.zsh_history"
+
+# Activity Tracker — quick log alias
+alias log='bash /Users/eggdice/Projects/activity-tracker/scripts/log.sh'
+
+# Activity Tracker — harvest yesterday's log on first terminal open
+(source "/Users/eggdice/Projects/activity-tracker/scripts/harvest.sh" &>/dev/null &)
