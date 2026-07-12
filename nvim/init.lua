@@ -33,6 +33,7 @@ vim.cmd('colorscheme hyper')
 -- Keymaps
 local map = vim.keymap.set
 map('n', 'gd', vim.lsp.buf.definition)
+map('n', 'gr', vim.lsp.buf.references)
 map('n', 'K', vim.lsp.buf.hover)
 map('n', '<leader>ca', vim.lsp.buf.code_action)
 map('n', '<C-p>', ':Telescope find_files<CR>')
@@ -106,8 +107,8 @@ end
 -- Conform (Formatting)
 require("conform").setup({
   formatters_by_ft = {
-    javascript = { "eslint_d" },
-    typescript = { "eslint_d" },
+    javascript = { "prettierd", "prettier" },
+    typescript = { "prettierd", "prettier" },
   },
   format_on_save = { lsp_fallback = true },
 })
