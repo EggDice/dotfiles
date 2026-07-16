@@ -232,6 +232,26 @@ function png2webp() {
     [[ $? -eq 0 ]] && echo "✅ Done: $output ($(du -h "$output" | cut -f1))"
 }
 
+function mp4clean() {
+    [[ -z "$1" ]] && echo "Usage: mp4clean <file> [out]  (strips audio/metadata, reformats to 1080x1920@30fps; out defaults to <name>-clean.mp4)" && return 1
+
+    local input="$1"
+    local output="${2:-${1%.*}-clean.mp4}"
+    [[ -d "$output" ]] && output="${output%/}/$(basename "${1%.*}-clean.mp4")"
+
+    echo "🔇 MP4 -> clean [1080x1920, 30fps, no audio]..."
+    ffmpeg -v warning -i "$input" \
+        -map_metadata -1 \
+        -map_chapters -1 \
+        -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p" \
+        -c:v libx264 -preset medium -crf 18 \
+        -an \
+        -movflags +faststart \
+        -y "$output"
+
+    [[ $? -eq 0 ]] && echo "✅ Done: $output ($(du -h "$output" | cut -f1))"
+}
+
 function wavnorm() {
     [[ -z "$1" ]] && echo "Usage: wavnorm <file> [out]  (out defaults to normalized.wav)" && return 1
 
