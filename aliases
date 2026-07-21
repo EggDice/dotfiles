@@ -233,19 +233,28 @@ function png2webp() {
 }
 
 function mp4clean() {
-    [[ -z "$1" ]] && echo "Usage: mp4clean <file> [out]  (strips audio/metadata, reformats to 1080x1920@30fps; out defaults to <name>-clean.mp4)" && return 1
+    local keep_audio=()
+    zparseopts -E -D a=keep_audio
+    [[ -z "$1" ]] && echo "Usage: mp4clean <file> [out] [-a keep audio]  (strips metadata, reformats to 1080x1920@30fps; audio dropped unless -a; out defaults to <name>-clean.mp4)" && return 1
 
     local input="$1"
     local output="${2:-${1%.*}-clean.mp4}"
     [[ -d "$output" ]] && output="${output%/}/$(basename "${1%.*}-clean.mp4")"
 
-    echo "🔇 MP4 -> clean [1080x1920, 30fps, no audio]..."
+    local audio_cmd=(-an)
+    local audio_label="no audio"
+    if [[ -n "$keep_audio" ]]; then
+        audio_cmd=(-c:a aac -b:a 192k)
+        audio_label="keep audio"
+    fi
+
+    echo "🔇 MP4 -> clean [1080x1920, 30fps, ${audio_label}]..."
     ffmpeg -v warning -i "$input" \
         -map_metadata -1 \
         -map_chapters -1 \
         -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p" \
         -c:v libx264 -preset medium -crf 18 \
-        -an \
+        "${audio_cmd[@]}" \
         -movflags +faststart \
         -y "$output"
 
