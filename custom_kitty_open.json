@@ -1,8 +1,8 @@
 {
-  "title": "Custom Hyper Terminal Open",
+  "title": "Custom kitty Terminal Open",
   "rules": [
     {
-      "description": "Shift + Option + Enter to open Hyper Terminal",
+      "description": "Shift + Option + Enter to open kitty Terminal",
       "manipulators": [
         {
           "type": "basic",
@@ -15,7 +15,7 @@
           },
           "to": [
             {
-              "shell_command": "open -na 'Hyper'"
+              "shell_command": "open -na kitty"
             }
           ]
         }

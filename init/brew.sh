@@ -26,7 +26,7 @@ brew install ffmpeg
 brew install fzf
 brew install --cask google-chrome
 brew install gimp
-brew install --cask hyper
+brew install --cask kitty
 brew install htop
 brew install imagemagick
 brew install --cask iina
@@ -44,6 +44,7 @@ brew install sox
 brew install --cask steam
 brew install the_silver_searcher
 brew install thefuck
+brew install timg
 brew install --cask transmission
 brew install tmux
 brew install tree

@@ -1,8 +1,8 @@
 {
-  "title": "Custom Shift Enter (Terminal + Hyper)",
+  "title": "Custom Shift Enter (Terminal + kitty)",
   "rules": [
     {
-      "description": "Shift+Enter -> ESC then Enter (Terminal + Hyper)",
+      "description": "Shift+Enter -> ESC then Enter (Terminal + kitty)",
       "manipulators": [
         {
           "type": "basic",
@@ -10,8 +10,7 @@
             {
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
-                "^co\\.zeit\\.hyper$",
-                "^io\\.hyper\\.app$"
+                "^net\\.kovidgoyal\\.kitty$"
               ],
               "type": "frontmost_application_if"
             }

@@ -10,7 +10,7 @@ module.exports = {
         // default font size in pixels for all tabs
         fontSize: 12,
         // font family with optional fallbacks
-        fontFamily: '"Monaspace Krypton", "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+        fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
         // default font weight: 'normal' or 'bold'
         fontWeight: 'normal',
         // font weight for bold characters: 'normal' or 'bold'
@@ -48,29 +48,31 @@ module.exports = {
         // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
         // additionally, set to `'left'` if you want them on the left, like in Ubuntu
         // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
-        showWindowControls: false,
+        showWindowControls: '',
         // custom padding (CSS format, i.e.: `top right bottom left`)
-        padding: '2px 2px',
+        padding: '12px 14px',
         // the full list. if you're going to provide the full color palette,
         // including the 6 x 6 color cubes and the grayscale map, just provide
         // an array here instead of a color map object
         colors: {
             black: '#000000',
-            red: '#ff0000',
-            green: '#33ff00',
-            yellow: '#ffff00',
-            blue: '#0066ff',
-            magenta: '#cc00ff',
-            cyan: '#00ffff',
-            white: '#ffffff',
-            lightBlack: '#808080',
-            lightRed: '#ff5f5f',
-            lightGreen: '#5fff5f',
-            lightYellow: '#ffffaf',
-            lightBlue: '#5fafff',
-            lightMagenta: '#ff5fff',
-            lightCyan: '#5fffff',
-            lightWhite: '#e4e4e4',
+            red: '#C51E14',
+            green: '#1DC121',
+            yellow: '#C7C329',
+            blue: '#0A2FC4',
+            magenta: '#C839C5',
+            cyan: '#20C5C6',
+            white: '#C7C7C7',
+            lightBlack: '#686868',
+            lightRed: '#FD6F6B',
+            lightGreen: '#67F86F',
+            lightYellow: '#FFFA72',
+            lightBlue: '#6A76FB',
+            lightMagenta: '#FD7CFC',
+            lightCyan: '#68FDFE',
+            lightWhite: '#FFFFFF',
+            limeGreen: '#32CD32',
+            lightCoral: '#F08080',
         },
         // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
         // if left empty, your system's login shell will be used by default
@@ -99,11 +101,11 @@ module.exports = {
         // Supported Options:
         //  1. 'SOUND' -> Enables the bell as a sound
         //  2. false: turns off the bell
-        bell: false,
+        bell: 'SOUND',
         // An absolute file path to a sound file on the machine.
-        bellSoundURL: '/path/to/sound/file',
+        // bellSoundURL: '/path/to/sound/file',
         // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
-        copyOnSelect: true,
+        copyOnSelect: false,
         // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
         defaultSSHApp: true,
         // if `true` (without backticks and without quotes), on right click selected text will be copied or pasted if no
@@ -128,11 +130,6 @@ module.exports = {
         // set to true to preserve working directory when creating splits or tabs
         preserveCWD: true,
         // for advanced config flags please refer to https://hyper.is/#cfg
-        hyperclean: {
-          hideTabs: true, // default: false
-        },
-        // Set the number of rows to be persisted in terminal buffer for scrolling
-        scrollback: 100000,
     },
     // a list of plugins to fetch and install from npm
     // format: [@org/]project[#version]
@@ -140,7 +137,7 @@ module.exports = {
     //   `hyperpower`
     //   `@company/project`
     //   `project#1.0.1`
-    plugins: ["hyperclean"],
+    plugins: [],
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
     // to load it and avoid it being `npm install`ed
