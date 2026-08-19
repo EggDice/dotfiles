@@ -120,3 +120,6 @@ alias log='bash /Users/eggdice/Projects/activity-tracker/scripts/log.sh'
 
 # Activity Tracker — harvest yesterday's log on first terminal open
 (source "/Users/eggdice/Projects/activity-tracker/scripts/harvest.sh" &>/dev/null &)
+
+# dungarees/bin (media scripts)
+export PATH="/Users/eggdice/Projects/productkind/dungarees/bin:$PATH"
