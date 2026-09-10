@@ -6,6 +6,11 @@ opt.number = true
 opt.relativenumber = true
 opt.textwidth = 100
 opt.colorcolumn = "100"
+-- Soft-wrap at word boundaries instead of mid-word, and keep the
+-- continuation lines aligned with the start of the wrapped line.
+opt.wrap = true
+opt.linebreak = true
+opt.breakindent = true
 opt.mouse = "a"
 opt.termguicolors = true
 opt.tabstop = 2
