@@ -1,16 +1,15 @@
 {
-  "title": "Custom Shift Enter (Terminal + kitty)",
+  "title": "Custom Shift Enter (Terminal.app only)",
   "rules": [
     {
-      "description": "Shift+Enter -> ESC then Enter (Terminal + kitty)",
+      "description": "Shift+Enter -> ESC then Enter (Terminal.app only)",
       "manipulators": [
         {
           "type": "basic",
           "conditions": [
             {
               "bundle_identifiers": [
-                "^com\\.apple\\.Terminal$",
-                "^net\\.kovidgoyal\\.kitty$"
+                "^com\\.apple\\.Terminal$"
               ],
               "type": "frontmost_application_if"
             }
