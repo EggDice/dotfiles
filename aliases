@@ -21,6 +21,7 @@ alias hosts='sudo $EDITOR /etc/hosts'
 # Shortcuts
 alias g="git"
 alias v="vim"
+alias gd="git_vimdiff"
 alias t="todo"
 alias bigterm="xterm -fa 'Monospace' -fs 20"
 
@@ -29,6 +30,12 @@ alias xclip="xclip -selection c"
 
 # Pomodoro
 alias pomo="sleep `echo '60 * 25' | bc`; say 'End of pomodoro my friend! Stop Working!'"
+
+# Open the whole git diff in nvim, one vimdiff tab per changed file.
+# Takes any `git diff` args: git_vimdiff HEAD, --cached, main...HEAD
+function git_vimdiff () {
+  nvim -c "Git difftool -y $*" -c 'if tabpagenr("$") > 1 | 1tabclose | endif'
+}
 
 function drun () {
   docker run -i -t --rm --user $(id -u):$(id -g) -v `pwd`:`pwd` -w `pwd` $@

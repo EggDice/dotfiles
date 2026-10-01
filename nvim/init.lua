@@ -22,6 +22,7 @@ opt.clipboard = "unnamedplus"
 opt.updatetime = 300
 opt.signcolumn = "yes"
 opt.undofile = true
+opt.diffopt:append("vertical")
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
@@ -43,6 +44,8 @@ map('n', 'K', vim.lsp.buf.hover)
 map('n', '<leader>ca', vim.lsp.buf.code_action)
 map('n', '<C-p>', ':Telescope find_files<CR>')
 map('n', '<leader>rn', vim.lsp.buf.rename)
+map('n', '<leader>gd', ':Git difftool -y ')
+map('n', '<leader>gs', ':Git<CR>')
 
 require("mason").setup()
 require("mason-lspconfig").setup({
